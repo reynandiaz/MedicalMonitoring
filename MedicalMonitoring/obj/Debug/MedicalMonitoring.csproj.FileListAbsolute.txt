@@ -1,0 +1,15 @@
+D:\Projects\MedicalMonitoring\MedicalMonitoring\obj\Debug\MedicalMonitoring.csprojAssemblyReference.cache
+D:\Projects\MedicalMonitoring\MedicalMonitoring\obj\Debug\MedicalMonitoring.Login.resources
+D:\Projects\MedicalMonitoring\MedicalMonitoring\obj\Debug\MedicalMonitoring.Properties.Resources.resources
+D:\Projects\MedicalMonitoring\MedicalMonitoring\obj\Debug\MedicalMonitoring.csproj.GenerateResource.cache
+D:\Projects\MedicalMonitoring\MedicalMonitoring\obj\Debug\MedicalMonitoring.csproj.CoreCompileInputs.cache
+D:\Projects\MedicalMonitoring\MedicalMonitoring\bin\Debug\MedicalMonitoring.exe.config
+D:\Projects\MedicalMonitoring\MedicalMonitoring\bin\Debug\MedicalMonitoring.exe
+D:\Projects\MedicalMonitoring\MedicalMonitoring\bin\Debug\MedicalMonitoring.pdb
+D:\Projects\MedicalMonitoring\MedicalMonitoring\bin\Debug\MySql.Data.dll
+D:\Projects\MedicalMonitoring\MedicalMonitoring\bin\Debug\MySql.Data.xml
+D:\Projects\MedicalMonitoring\MedicalMonitoring\obj\Debug\MedicalMonitoring.csproj.CopyComplete
+D:\Projects\MedicalMonitoring\MedicalMonitoring\obj\Debug\MedicalMonitoring.exe
+D:\Projects\MedicalMonitoring\MedicalMonitoring\obj\Debug\MedicalMonitoring.pdb
+D:\Projects\MedicalMonitoring\MedicalMonitoring\obj\Debug\MedicalMonitoring.MainMenu.resources
+D:\Projects\MedicalMonitoring\MedicalMonitoring\obj\Debug\MedicalMonitoring.AddRecord.resources
