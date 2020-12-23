@@ -8,6 +8,12 @@ namespace MedicalMonitoring.Process
 {
     public class PatientProcess
     {
+        public struct returnPatient
+        {
+            public string rtnPatientCode;
+            public int  rtnSuccess;
+        }
+
         public static string GeneratePatientCode()
         {
             string rtnPatientCode="";
@@ -21,20 +27,24 @@ namespace MedicalMonitoring.Process
             return rtnPatientCode = maxcount.ToString("00000000");
         }
 
-        public static int SaveNewRecord(string patientcode,string firstname,string middlename, string lastname,string address, DateTime birthdate)
+        public static returnPatient SaveNewRecord(string firstname,string middlename, string lastname,string address, DateTime birthdate)
         {
-            int rtnSuccess = 0;
+            returnPatient returnresult = new returnPatient();
 
+            int rtnSuccess = 0;
+            string PatientCode = "";
             try
             {
+                PatientCode = GeneratePatientCode();
+
                 string query = " INSERT INTO patients(PatientCode, Firstname, Middlename, " +
                     "Lastname, BirthDate, Address, CreatedDate, DeletedDate, UpdatedDate," +
                     " UpdatedBy) " +
-                    " VALUES('" + patientcode + "', " +
+                    " VALUES('" + PatientCode + "', " +
                     "'" + firstname + "', " +
-                    "'"+ middlename +"', " +
-                    "'"+ lastname +"', " +
-                    "'"+ birthdate +"', " +
+                    "'" + middlename + "', " +
+                    "'" + lastname + "', " +
+                    "'" + birthdate.ToString("yyyy-MM-dd H:mm:ss") + "', " +
                     "'"+ address +"', " +
                     "now(), null, now(), " +
                     "'" + Config.UserInfo.Rows[0]["UserCode"] + "') ";
@@ -42,10 +52,24 @@ namespace MedicalMonitoring.Process
                 rtnSuccess =1;
             }
             catch
-
             { rtnSuccess = 2; }
-            return rtnSuccess;
 
+            returnresult.rtnPatientCode = PatientCode;
+            returnresult.rtnSuccess = rtnSuccess;
+            return returnresult;
+        }
+
+        public static returnPatient UpdatePatientRecord()
+        {
+            returnPatient rtnValue = new returnPatient();
+
+            try
+            {
+
+            }
+            catch 
+            { rtnValue.rtnSuccess = 2; }
+            return rtnValue;
         }
 
     }

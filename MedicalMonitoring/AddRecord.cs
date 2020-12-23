@@ -17,13 +17,6 @@ namespace MedicalMonitoring
         {
             InitializeComponent();
         }
-
-        private void AddRecord_Load(object sender, EventArgs e)
-        {
-            txtCode.Text = PatientProcess.GeneratePatientCode();
-
-        }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (txtFirst.Text != "" || txtMiddle.Text != "" || txtLast.Text != "" || txtAddress.Text!="")
@@ -31,13 +24,14 @@ namespace MedicalMonitoring
                 DialogResult dialogResult = MessageBox.Show("Save Record?", "System Message", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    int rtnSuccess = PatientProcess.SaveNewRecord(txtCode.Text, txtFirst.Text, txtMiddle.Text, txtLast.Text, txtAddress.Text,dtBirth.Value);
-                    if (rtnSuccess == 1)
+                    var rtn = PatientProcess.SaveNewRecord(txtFirst.Text, txtMiddle.Text, txtLast.Text, txtAddress.Text,dtBirth.Value);
+                    if (rtn.rtnSuccess == 1)
                     {
-                        MessageBox.Show("Record Saved!");
+                        MessageBox.Show("Record Saved! \n" + 
+                            "PatientCode is "+rtn.rtnPatientCode);
                         this.Close();
                     }
-                    else if (rtnSuccess == 2)
+                    else if (rtn.rtnSuccess == 2)
                     { MessageBox.Show("Error on save!"); }
                 }
             }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MedicalMonitoring.Process;
 
 namespace MedicalMonitoring
 {
@@ -21,6 +22,17 @@ namespace MedicalMonitoring
         {
             Form add = new AddRecord();
             add.Show();
+        }
+
+        private void btnRecord_Click(object sender, EventArgs e)
+        {
+            Form record = new RecordList();
+            record.Show();
+        }
+
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+            lblRights.Text = "UserLevel: " + (Convert.ToInt32(Config.UserInfo.Rows[0]["UserRights"]) == 1 ? "Administrator" : "User");
         }
     }
 }

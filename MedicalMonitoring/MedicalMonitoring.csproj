@@ -67,11 +67,23 @@
     <Compile Include="MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="PatientInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientInformation.Designer.cs">
+      <DependentUpon>PatientInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Process\Config.cs" />
     <Compile Include="Process\LoginProcess.cs" />
     <Compile Include="Process\PatientProcess.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecordList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecordList.Designer.cs">
+      <DependentUpon>RecordList.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddRecord.resx">
       <DependentUpon>AddRecord.cs</DependentUpon>
     </EmbeddedResource>
@@ -80,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientInformation.resx">
+      <DependentUpon>PatientInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -90,6 +105,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RecordList.resx">
+      <DependentUpon>RecordList.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

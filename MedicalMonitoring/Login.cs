@@ -30,12 +30,13 @@ namespace MedicalMonitoring
                 Config.connection.Open();
                 lblConnection.Text = "Connected";
             }
-            catch
+            catch (Exception exc)
             {
                 lblConnection.Text = "Failed";
                 txtUser.Enabled = false;
                 txtPassword.Enabled = false;
                 btnLogin.Enabled = false;
+                MessageBox.Show(exc.ToString());
             }
             finally
             {
