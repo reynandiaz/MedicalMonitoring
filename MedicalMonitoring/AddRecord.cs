@@ -36,5 +36,13 @@ namespace MedicalMonitoring
                 }
             }
         }
+
+        private void AddRecord_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
     }
 }

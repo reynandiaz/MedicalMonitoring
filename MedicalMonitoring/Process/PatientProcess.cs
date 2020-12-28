@@ -59,16 +59,28 @@ namespace MedicalMonitoring.Process
             return returnresult;
         }
 
-        public static returnPatient UpdatePatientRecord()
+        public static returnPatient UpdatePatientRecord(string patientcode,string address,DateTime birthdate,string firstname,string middlename,string lastname)
         {
             returnPatient rtnValue = new returnPatient();
 
             try
             {
+                string query = "UPDATE patients " +
+                                "SET Firstname = '"+firstname+"' " +
+                                "    , Middlename = '"+ middlename +"'" +
+                                "    , Lastname = '"+ lastname +"'" +
+                                "    , BirthDate = '"+ birthdate.ToString("yyyy-MM-dd H:mm:ss") + "'" +
+                                "    , Address = '"+ address + "'" +
+                                "    , UpdatedDate = now()" +
+                                "    , UpdatedBy = '" + Config.UserInfo.Rows[0]["UserCode"] + "'" +
+                                "WHERE PatientCode = '" + patientcode + "'";
 
+                Config.ExecuteCmd(query);
+                rtnValue.rtnSuccess = 1;
             }
             catch 
             { rtnValue.rtnSuccess = 2; }
+
             return rtnValue;
         }
 

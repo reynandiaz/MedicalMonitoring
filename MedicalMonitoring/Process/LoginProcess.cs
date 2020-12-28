@@ -12,7 +12,6 @@ namespace MedicalMonitoring.Process
     {
         public static DataTable ValidateLogin(string username, string password)
         {
-
             string query = "Select * from users where username = '" + username + "' and password = '" + password + "' and deleteddate is null";
 
             DataTable rtnInfo = Config.RetreiveData(query);

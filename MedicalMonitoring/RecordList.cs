@@ -24,11 +24,13 @@ namespace MedicalMonitoring
         }
         public void RefreshTable()
         {
-            string query = "select PatientCode,LastName from patients " +
-                            "where deletedDate is null ";
+
+            string query = "select PatientCode,concat(LastName, ', ',Firstname, ' ',Middlename) AS PatientName,  "+
+                           " CASE WHEN (DeletedDate IS null) THEN 'Yes' "+
+                           " ELSE 'No' END AS Active from patients ";
             if (txtFilter.Text != "")
             {
-                query = query + " and Firstname like '%" + txtFilter.Text + "%' " +
+                query = query + " where Firstname like '%" + txtFilter.Text + "%' " +
                     "or middlename like '%" + txtFilter.Text + "%' " +
                     "or lastname like '%" + txtFilter.Text + "%' " +
                     "or address like '%" + txtFilter.Text + "%' ";
@@ -46,23 +48,32 @@ namespace MedicalMonitoring
                 foreach (DataRow row in dtable.Rows)
                 {
                     dataGridView1.Rows[x].Cells[0].Value = row["PatientCode"].ToString();
-                    dataGridView1.Rows[x].Cells[1].Value = row["LastName"].ToString();
+                    dataGridView1.Rows[x].Cells[1].Value = row["PatientName"].ToString();
+                    dataGridView1.Rows[x].Cells[2].Value = row["Active"].ToString();
 
-                    dataGridView1.Rows[x].Cells[2].Value = ">>";
+                    dataGridView1.Rows[x].Cells[3].Value = ">>";
                     x++;
                 }
             }
             dataGridView1.AllowUserToAddRows = false;
+
+            foreach (DataGridViewRow drows in dataGridView1.Rows)
+            {
+                if (drows.Cells[2].Value.ToString() == "No")
+                {
+                    drows.DefaultCellStyle.BackColor = Color.Gray;
+                }
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 2)
+            if (e.ColumnIndex == 3)
             {
                 string CellCode = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
                 PatientInformation.PatientCode = CellCode;
                 Form PatientInfo = new PatientInformation();
-                PatientInfo.Show();
+                PatientInfo.ShowDialog();
             }
         }
 
@@ -75,6 +86,21 @@ namespace MedicalMonitoring
         {
             txtFilter.Text = "";
             RefreshTable();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            Form add = new AddRecord();
+            add.ShowDialog();
+            RefreshTable();
+        }
+
+        private void RecordList_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
         }
     }
 }

@@ -31,3 +31,4 @@ C:\Users\diazr\Documents\GitHub\MedicalMonitoring\MedicalMonitoring\obj\Debug\Me
 C:\Users\diazr\Documents\GitHub\MedicalMonitoring\MedicalMonitoring\obj\Debug\MedicalMonitoring.exe
 C:\Users\diazr\Documents\GitHub\MedicalMonitoring\MedicalMonitoring\obj\Debug\MedicalMonitoring.pdb
 C:\Users\diazr\Documents\GitHub\MedicalMonitoring\MedicalMonitoring\obj\Debug\MedicalMonitoring.PatientInformation.resources
+C:\Users\diazr\Documents\GitHub\MedicalMonitoring\MedicalMonitoring\obj\Debug\MedicalMonitoring.Users.resources

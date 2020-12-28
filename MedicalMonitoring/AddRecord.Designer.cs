@@ -48,7 +48,7 @@
             this.txtFirst.Location = new System.Drawing.Point(15, 23);
             this.txtFirst.Name = "txtFirst";
             this.txtFirst.Size = new System.Drawing.Size(148, 23);
-            this.txtFirst.TabIndex = 2;
+            this.txtFirst.TabIndex = 1;
             // 
             // txtMiddle
             // 
@@ -56,7 +56,7 @@
             this.txtMiddle.Location = new System.Drawing.Point(169, 23);
             this.txtMiddle.Name = "txtMiddle";
             this.txtMiddle.Size = new System.Drawing.Size(148, 23);
-            this.txtMiddle.TabIndex = 3;
+            this.txtMiddle.TabIndex = 2;
             // 
             // txtLast
             // 
@@ -64,7 +64,7 @@
             this.txtLast.Location = new System.Drawing.Point(323, 23);
             this.txtLast.Name = "txtLast";
             this.txtLast.Size = new System.Drawing.Size(148, 23);
-            this.txtLast.TabIndex = 4;
+            this.txtLast.TabIndex = 3;
             // 
             // label2
             // 
@@ -113,7 +113,7 @@
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(387, 113);
-            this.txtAddress.TabIndex = 9;
+            this.txtAddress.TabIndex = 4;
             // 
             // label6
             // 
@@ -131,7 +131,7 @@
             this.btnSave.Location = new System.Drawing.Point(321, 310);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(148, 39);
-            this.btnSave.TabIndex = 11;
+            this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -142,7 +142,7 @@
             this.dtBirth.Location = new System.Drawing.Point(84, 231);
             this.dtBirth.Name = "dtBirth";
             this.dtBirth.Size = new System.Drawing.Size(210, 23);
-            this.dtBirth.TabIndex = 12;
+            this.dtBirth.TabIndex = 5;
             // 
             // label7
             // 
@@ -172,9 +172,11 @@
             this.Controls.Add(this.txtMiddle);
             this.Controls.Add(this.txtFirst);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.Name = "AddRecord";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddRecord";
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.AddRecord_KeyUp);
             this.ResumeLayout(false);
             this.PerformLayout();
 

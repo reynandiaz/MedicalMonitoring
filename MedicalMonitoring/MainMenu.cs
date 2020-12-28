@@ -32,7 +32,25 @@ namespace MedicalMonitoring
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
-            lblRights.Text = "UserLevel: " + (Convert.ToInt32(Config.UserInfo.Rows[0]["UserRights"]) == 1 ? "Administrator" : "User");
+            lblRights.Text = "User Level: " + (Convert.ToInt32(Config.UserInfo.Rows[0]["UserRights"]) == 1 ? "Administrator" : "User");
+            if (Convert.ToInt32(Config.UserInfo.Rows[0]["UserRights"]) != 1)
+            {
+                btnUsers.Visible = false;
+            }
+        }
+
+        private void btnUsers_Click(object sender, EventArgs e)
+        {
+            Form user = new Users();
+            user.Show();
+        }
+
+        private void MainMenu_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
         }
     }
 }
