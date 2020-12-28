@@ -55,6 +55,12 @@
     <Compile Include="AddRecord.Designer.cs">
       <DependentUpon>AddRecord.cs</DependentUpon>
     </Compile>
+    <Compile Include="Conditions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Conditions.Designer.cs">
+      <DependentUpon>Conditions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     </Compile>
     <EmbeddedResource Include="AddRecord.resx">
       <DependentUpon>AddRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Conditions.resx">
+      <DependentUpon>Conditions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

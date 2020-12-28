@@ -32,7 +32,7 @@
             this.btnRecord = new System.Windows.Forms.Button();
             this.lblRights = new System.Windows.Forms.Label();
             this.btnUsers = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCondition = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -78,22 +78,23 @@
             this.btnUsers.UseVisualStyleBackColor = true;
             this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
             // 
-            // button1
+            // btnCondition
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(180, 66);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(162, 30);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Conditions";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCondition.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCondition.Location = new System.Drawing.Point(180, 66);
+            this.btnCondition.Name = "btnCondition";
+            this.btnCondition.Size = new System.Drawing.Size(162, 30);
+            this.btnCondition.TabIndex = 6;
+            this.btnCondition.Text = "Conditions";
+            this.btnCondition.UseVisualStyleBackColor = true;
+            this.btnCondition.Click += new System.EventHandler(this.btnCondition_Click);
             // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(524, 397);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCondition);
             this.Controls.Add(this.btnUsers);
             this.Controls.Add(this.lblRights);
             this.Controls.Add(this.btnRecord);
@@ -116,6 +117,6 @@
         private System.Windows.Forms.Button btnRecord;
         private System.Windows.Forms.Label lblRights;
         private System.Windows.Forms.Button btnUsers;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCondition;
     }
 }

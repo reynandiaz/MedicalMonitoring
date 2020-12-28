@@ -52,5 +52,11 @@ namespace MedicalMonitoring
                 this.Close();
             }
         }
+
+        private void btnCondition_Click(object sender, EventArgs e)
+        {
+            Form condition = new Conditions();
+            condition.Show();
+        }
     }
 }
