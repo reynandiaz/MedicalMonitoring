@@ -15,6 +15,9 @@ namespace MedicalMonitoring
     {
         public static string PatientCode;
 
+        //if AccountStatus==1? Active :Inactive;
+        private int AccountStatus;
+
         //if mode==1?Readmode : Modify;
         private int FormMode;
         public PatientInformation()
@@ -41,6 +44,8 @@ namespace MedicalMonitoring
             txtLast.Text = data.Rows[0]["Lastname"].ToString();
             txtAddress.Text = data.Rows[0]["Address"].ToString();
             dtBirth.Value = Convert.ToDateTime(data.Rows[0]["Birthdate"]);
+            AccountStatus = data.Rows[0]["DeletedDate"].ToString() == "" ? 1:2;
+            btnStatus.Text = AccountStatus == 1 ? "Active" : "Inactive";
 
         }
 
@@ -80,7 +85,7 @@ namespace MedicalMonitoring
         {
             if (e.KeyCode == Keys.Escape)
             {
-                this.Close() ;
+                this.Close();
             }
         }
 
@@ -101,22 +106,48 @@ namespace MedicalMonitoring
         {
             if (FormMode == 2)
             {
-                DialogResult dialogResult = MessageBox.Show("Update Record?", "System Message", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
+                var rtnvalue = PatientProcess.UpdatePatientRecord(txtPatientCode.Text, txtAddress.Text, dtBirth.Value, txtFirstname.Text, txtMiddle.Text, txtLast.Text);
+                if (rtnvalue.rtnSuccess == 1)
                 {
-                    var rtnvalue = PatientProcess.UpdatePatientRecord(txtPatientCode.Text, txtAddress.Text, dtBirth.Value, txtFirstname.Text, txtMiddle.Text, txtLast.Text);
-                    if (rtnvalue.rtnSuccess == 1)
-                    {
-                        MessageBox.Show("Record Updated!");
-                        FormMode = 1;
-                        SetMode();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Failed!");
-                    }
+                    MessageBox.Show("Record Updated!");
+                    FormMode = 1;
+                    SetMode();
+                }
+                else
+                {
+                    MessageBox.Show("Failed!");
                 }
             }
+        }
+
+        private void btnStatus_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show(AccountStatus==1?"Inactive?":"Active?", "System Message", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                PatientStatus();
+            }
+        }
+        private void PatientStatus()
+        {
+            if (AccountStatus == 1)
+            {
+                PatientProcess.UpdateStatus(txtPatientCode.Text, 2);
+                AccountStatus = 2;
+                btnStatus.Text = "Inactive";
+            }
+            else
+            {
+                PatientProcess.UpdateStatus(txtPatientCode.Text, 1);
+                AccountStatus = 1;
+                btnStatus.Text = "Active";
+            }
+        }
+
+        private void btnDiagnosis_Click(object sender, EventArgs e)
+        {
+            Form diag = new Diagnosis();
+            diag.ShowDialog();
         }
     }
 }

@@ -74,6 +74,7 @@ namespace MedicalMonitoring
                 PatientInformation.PatientCode = CellCode;
                 Form PatientInfo = new PatientInformation();
                 PatientInfo.ShowDialog();
+                RefreshTable();
             }
         }
 

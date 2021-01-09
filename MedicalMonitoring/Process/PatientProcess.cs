@@ -84,5 +84,20 @@ namespace MedicalMonitoring.Process
             return rtnValue;
         }
 
+        public static void UpdateStatus(string PatientCode,int intStatus)
+        {
+            string query = "";
+            if (intStatus == 2)
+            {
+                query = "Update patients set DeletedDate = now()" +
+                    " where PatientCode = '" + PatientCode + "'";
+            }
+            else
+            {
+                query = "Update patients set DeletedDate =null" +
+                    " where PatientCode = '" + PatientCode + "'";
+            }
+            Config.ExecuteCmd(query);
+        }
     }
 }

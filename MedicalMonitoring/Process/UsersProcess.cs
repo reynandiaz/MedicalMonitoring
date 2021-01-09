@@ -12,9 +12,8 @@ namespace MedicalMonitoring.Process
         {
             string query = "Select max(UserCode) from Users";
 
-            string maxCode = (Convert.ToInt32(Config.ExecuteIntScalar(query))+1).ToString("00000");
+            return (Convert.ToInt32(Config.ExecuteIntScalar(query))+1).ToString("00000");
 
-            return maxCode;
         }
 
         public static void SaveUser(string UserCode,string Username,string Password,string UserRights)

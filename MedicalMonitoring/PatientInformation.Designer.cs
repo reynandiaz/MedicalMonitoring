@@ -46,15 +46,15 @@ namespace MedicalMonitoring
             this.txtPatientCode = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnPrintInfo = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnStatus = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.btnDiagnosis = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnPrint = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -217,7 +217,7 @@ namespace MedicalMonitoring
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnPrintInfo);
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.btnStatus);
             this.groupBox2.Controls.Add(this.btnUpdate);
             this.groupBox2.Location = new System.Drawing.Point(12, 342);
             this.groupBox2.Name = "groupBox2";
@@ -235,14 +235,15 @@ namespace MedicalMonitoring
             this.btnPrintInfo.Text = "Print Information";
             this.btnPrintInfo.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnStatus
             // 
-            this.button1.Location = new System.Drawing.Point(9, 53);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 28);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "&Deactivate";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnStatus.Location = new System.Drawing.Point(7, 53);
+            this.btnStatus.Name = "btnStatus";
+            this.btnStatus.Size = new System.Drawing.Size(70, 28);
+            this.btnStatus.TabIndex = 25;
+            this.btnStatus.Text = "&Inactive";
+            this.btnStatus.UseVisualStyleBackColor = true;
+            this.btnStatus.Click += new System.EventHandler(this.btnStatus_Click);
             // 
             // btnUpdate
             // 
@@ -257,7 +258,7 @@ namespace MedicalMonitoring
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnPrint);
-            this.groupBox3.Controls.Add(this.button4);
+            this.groupBox3.Controls.Add(this.btnDiagnosis);
             this.groupBox3.Controls.Add(this.button3);
             this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Controls.Add(this.textBox1);
@@ -269,14 +270,24 @@ namespace MedicalMonitoring
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Details";
             // 
-            // button4
+            // btnPrint
             // 
-            this.button4.Location = new System.Drawing.Point(209, 21);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(120, 23);
-            this.button4.TabIndex = 28;
-            this.button4.Text = "Add";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnPrint.Location = new System.Drawing.Point(249, 404);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(80, 28);
+            this.btnPrint.TabIndex = 29;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            // 
+            // btnDiagnosis
+            // 
+            this.btnDiagnosis.Location = new System.Drawing.Point(209, 21);
+            this.btnDiagnosis.Name = "btnDiagnosis";
+            this.btnDiagnosis.Size = new System.Drawing.Size(120, 23);
+            this.btnDiagnosis.TabIndex = 28;
+            this.btnDiagnosis.Text = "Add";
+            this.btnDiagnosis.UseVisualStyleBackColor = true;
+            this.btnDiagnosis.Click += new System.EventHandler(this.btnDiagnosis_Click);
             // 
             // button3
             // 
@@ -312,15 +323,6 @@ namespace MedicalMonitoring
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(323, 319);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.Location = new System.Drawing.Point(249, 404);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(80, 28);
-            this.btnPrint.TabIndex = 29;
-            this.btnPrint.Text = "Print";
-            this.btnPrint.UseVisualStyleBackColor = true;
             // 
             // PatientInformation
             // 
@@ -365,14 +367,14 @@ namespace MedicalMonitoring
         private System.Windows.Forms.TextBox txtPatientCode;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnPrintInfo;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnStatus;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnDiagnosis;
         private System.Windows.Forms.Button btnPrint;
     }
 }
